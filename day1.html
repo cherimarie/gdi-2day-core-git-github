@@ -22,7 +22,7 @@
     <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
     <!-- If use the PDF print sheet so students can print slides-->
-    
+
     <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
     <!--[if lt IE 9]>
@@ -51,7 +51,7 @@
           <h3>Intro to Git and Github</h3>
           <p>slides: http://cherimarie.github.io/gdi-2day-core-git-github</p>
         </section>
-        
+
         <!-- Welcome-->
         <section>
           <h3>Welcome!</h3>
@@ -66,7 +66,7 @@
           </ul>
           </div>
         </section>
-        
+
         <section>
           <h3>Welcome!</h3>
           <div class = "left-align">
@@ -78,7 +78,7 @@
           </ul>
           </div>
         </section>
-        
+
         <section>
           <h3>What we will cover today</h3>
           <ul>
@@ -91,7 +91,7 @@
           <h3>Real talk</h3>
           <p>Git isn't simple. Like most powerful tools, it's complex and takes some time to master.</p>
         </section>
-        
+
         <!-- Version control-->
           <section>
             <h3>What is version control?</h3>
@@ -176,29 +176,17 @@
           <h3>Installation and Setup</h3>
           <p>Configure Git with your name and email</p>
           <pre><code contenteditable class ="command-line">
-# I'm a comment! Don't enter me in command line. Do enter lines that start with a $, but don't type the $. 
+# I'm a comment! Don't enter me in command line. Do enter lines that start with a $, but don't type the $.
 
 $ git config --global user.name "Your Name Here"
 # Sets the name git associates with your commits
-          
+
 $ git config --global user.email "your_email@example.com"
 # Sets the email git associates with your commits
-          
+
 $ git config --list
 # Shows your configuration settings
           </code></pre>
-        </section>
-
-        <section>
-          <h3>Installation and Setup</h3>
-          <p>An SSH key is like a secret handshake between your computer and Github. It allows Github's servers to verify your identity via public-key cryptography and challenge-response authentication- not via you typing in your Github password. It's super secure and not too difficult to set up. </p>
-          <a href="https://wiki.archlinux.org/index.php/SSH_Keys" alt="article about ssh keys">More info about SSH keys</a>.
-        </section>
-
-        <section>
-          <h3>Installation and Setup</h3>
-          <a href="https://help.github.com/articles/generating-ssh-keys">Setup ssh keys following this guide:</a>
-          <p>https://help.github.com/articles/generating-ssh-keys</p>
         </section>
 
         <!-- First commands-->
@@ -295,11 +283,11 @@ git status          #what's up, git?
         <!-- Undoing changes -->
         <section>
           <h3>Undoing Changes</h3>
-          <h4>Undoing local changes</h4> 
+          <h4>Undoing local changes</h4>
           <div>
             <p>If you've added some new text to hello.txt, but not yet staged it, just run:</p>
             <pre><code contenteditable class ="command-line">
-git checkout hello.txt 
+git checkout hello.txt
             </code></pre>
           </div>
           <p class="fragment">hello.txt is reset to its state at the last commit - your changes are gone!</p>
@@ -310,7 +298,7 @@ git checkout hello.txt
           <h4>Un-stage a file</h4>
           <p>If you already staged hello.txt, run:</p>
             <pre><code contenteditable class ="command-line">
-git reset hello.txt 
+git reset hello.txt
             </code></pre>
           <p>hello.txt is no longer staged, you can make whatever changes you like to it, and re-stage when it's ready.</p>
         </section>
@@ -327,7 +315,7 @@ git rm -f hello.txt
 
         <section>
           <h3>Undoing Changes</h3>
-          <h4>Undo staged changes</h4> 
+          <h4>Undo staged changes</h4>
             <p>If you've made some changes to hello.txt and staged it, but want the changes to disappear, run:</p>
             <pre><code contenteditable class ="command-line">
 git reset hello.txt     #unstage
@@ -338,11 +326,11 @@ git checkout hello.txt  #reset
 
         <section>
           <h3>Undoing Changes</h3>
-          <h4>Undoing committed changes- 1</h4> 
+          <h4>Undoing committed changes- 1</h4>
           <div>
             <p>If you've made changes and committed them, you can revert all the changes that happened in a specific commit by running:</p>
             <pre><code contenteditable class ="command-line">
-git log             #shows log of commits 
+git log             #shows log of commits
 git revert [SHA]    #undoes specified commit
             </code></pre>
             <p>This doesn't have to be your most recent commit- you can revert any commit. It will just undo the entire set of changes that were included in that commit.</p>
@@ -351,12 +339,12 @@ git revert [SHA]    #undoes specified commit
 
         <section>
           <h3>Undoing Changes</h3>
-          <h4>Undoing committed changes- 2</h4> 
+          <h4>Undoing committed changes- 2</h4>
           <div>
             <p>You can roll back your repo's state to where it was after any previous commit by running this with the SHA of the commit you'd like to reset to:</p>
             <pre><code contenteditable class ="command-line">
-git log                 #shows log of commits 
-git reset --hard [SHA]  #resets repo 
+git log                 #shows log of commits
+git reset --hard [SHA]  #resets repo
             </code></pre>
           </div>
           <p>This rolls back all changes since the specified commit - be careful! This isn't often used in real life.</p>
@@ -391,7 +379,7 @@ git branch
           <p>Switch to the master branch.</p>
           <pre><code contenteditable class ="command-line">
 git checkout master
-          </code></pre>            
+          </code></pre>
           <p>You'll notice the changes from feature_1 branch aren't there.</p>
 
         </section>
@@ -422,7 +410,7 @@ git merge feature_1
           <h4>Merge conflicts, cont.</h4>
           <p>Merge the master branch into feature_1 branch</p>
           <pre><code contenteditable class ="command-line">
-# on feature_1 branch              
+# on feature_1 branch
 git merge master
           </code></pre>
           <p>You will be notified of a conflict. Go to the file, fix the problem and delete the helpful comments Git added. Then commit your edits.</p>
@@ -433,6 +421,19 @@ git merge master
           <h3>Merging</h3>
           <h4>Merge conflicts, cont.</h4>
           <p>Note: somtimes, conflicts cause the files to automatically open in the Vim text editor. It looks just like a terminal window and has no obvious way to exit. Don't panic. Just type <strong>:q[enter]</strong> to exit it.<p>
+        </section>
+
+        <!-- preparing for Github -->
+        <section>
+          <h3>Github Setup</h3>
+          <p>An SSH key is like a secret handshake between your computer and Github. It allows Github's servers to verify your identity via public-key cryptography and challenge-response authentication- not via you typing in your Github password. It's super secure and not too difficult to set up. </p>
+          <a href="https://wiki.archlinux.org/index.php/SSH_Keys" alt="article about ssh keys">More info about SSH keys</a>.
+        </section>
+
+        <section>
+          <h3>Github Setup</h3>
+          <a href="https://help.github.com/articles/generating-ssh-keys">Setup ssh keys following this guide:</a>
+          <p>https://help.github.com/articles/generating-ssh-keys</p>
         </section>
 
         <!-- -->
